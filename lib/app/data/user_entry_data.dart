@@ -10,7 +10,6 @@ import '../models/response_handler_model.dart';
 class UserData {
   static CollectionReference usersCollection =
       FirebaseFirestore.instance.collection('users');
-  static String userId = ChachHelper.getData(key: CasheKeys.uid);
 
   //=========================== add New Entry ===========================
   static Future<ResponseHandlerClass> addNewEntry(
@@ -18,7 +17,7 @@ class UserData {
     try {
       // If the document doesn't exist, create a new one
       await usersCollection
-          .doc(userId)
+          .doc(ChachHelper.getData(key: CasheKeys.uid))
           .collection("entries")
           .doc(newEntry.currentDate.toString())
           .set(newEntry.toJson());
@@ -39,7 +38,7 @@ class UserData {
       // Update the document with the modified list
       DocumentReference entryReference = FirebaseFirestore.instance
           .collection("users")
-          .doc(userId)
+          .doc(ChachHelper.getData(key: CasheKeys.uid))
           .collection("entries")
           .doc(entryId);
 
@@ -61,7 +60,7 @@ class UserData {
       log("entryId : $entryId");
       DocumentReference entryReference = FirebaseFirestore.instance
           .collection("users")
-          .doc(userId)
+          .doc(ChachHelper.getData(key: CasheKeys.uid))
           .collection("entries")
           .doc(entryId);
 
@@ -78,7 +77,7 @@ class UserData {
     try {
       CollectionReference entriesCollection = FirebaseFirestore.instance
           .collection("users")
-          .doc(userId)
+          .doc(ChachHelper.getData(key: CasheKeys.uid))
           .collection("entries");
 
       QuerySnapshot entriesSnapshot = await entriesCollection.get();
