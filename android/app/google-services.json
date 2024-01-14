@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "885825761862",
+    "project_id": "bmi-calculation-fdfae",
+    "storage_bucket": "bmi-calculation-fdfae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885825761862:android:3d88ebf60617c1113f1047",
+        "android_client_info": {
+          "package_name": "com.bmi.calculation"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvwG_t1ZBoBpSPPLkL_xnYO6THfdSKZAQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
